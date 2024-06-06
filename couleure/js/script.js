@@ -19,6 +19,21 @@ btn.forEach(element => {
             formgreen.value = "00";
             formblue.value = "00";
             setcolor(formred.value, formgreen.value, formblue.value);
+        } else if (id == "btngreen") {
+            formred.value = "00";
+            formgreen.value = "ff";
+            formblue.value = "00";
+            setcolor(formred.value, formgreen.value, formblue.value);
+        }else{
+            formred.value = "00";
+            formgreen.value = "00";
+            formblue.value = "ff";
+            setcolor(formred.value, formgreen.value, formblue.value);
         }
+    })
+})
+form.forEach(champs =>{
+    champs.addEventListener("change", ()=>{
+        setcolor(formred.value,formgreen.value,formblue.value)
     })
 })
