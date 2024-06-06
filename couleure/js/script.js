@@ -11,6 +11,7 @@ function setcolor(red, green, blue) {
     body.style.backgroundColor = "#" + red + green + blue;
 
 }
+// 
 btn.forEach(element => {
     element.addEventListener("click", () => {
         const id = element.id;
