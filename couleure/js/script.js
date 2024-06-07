@@ -7,7 +7,7 @@ const formblue = document.querySelector("#formblue");
 const btnblue = document.querySelector("#btnblue");
 const form = document.querySelectorAll(".form");
 const btn = document.querySelectorAll(".btn");
-const regle = /[0-9a-f]{2}/
+const regle = /^[0-9a-f]{2}$/;
 function setcolor(red, green, blue) {
     body.style.backgroundColor = "#" + red + green + blue;
 
@@ -37,10 +37,9 @@ btn.forEach(element => {
 form.forEach(champs =>{
     champs.addEventListener("change", ()=>{
         if(!regle.test(champs.value)){
-            champs.value = ""
-            champs.setAttribute("placeholder","saisie invalide")
+            champs.value = "";
+            champs.setAttribute("placeholder","saisie invalide");
         }else{
-            champs.setAttribute("placeholder","")
         }
         setcolor(formred.value,formgreen.value,formblue.value)
     })
