@@ -7,7 +7,7 @@ const formblue = document.querySelector("#formblue");
 const btnblue = document.querySelector("#btnblue");
 const form = document.querySelectorAll(".form");
 const btn = document.querySelectorAll(".btn");
-const regle = /^[0-9a-f]{2}$/;
+const regle = /^[0-9a-f]{2}$/i;
 function setcolor(red, green, blue) {
     body.style.backgroundColor = "#" + red + green + blue;
 
