@@ -20,7 +20,7 @@ function creattable(personnes) {
     const nom = personne[1];
     const prenom = personne[0];
     const email = prenom + "." + nom + "@gmail.com"
-    tr = document.createElement("tr");
+    const tr = document.createElement("tr");
   table.appendChild(tr)
     const tdnom = document.createElement("td");
     tdnom.textContent = nom;
@@ -30,6 +30,7 @@ function creattable(personnes) {
     tr.appendChild(tdprenom)
     const tdemail = document.createElement("td");
     tdemail.textContent = email;
+    tr.appendChild(tdemail)
 
   })
   body.appendChild(table)
