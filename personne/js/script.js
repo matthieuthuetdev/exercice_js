@@ -36,6 +36,9 @@ function creattable(personnes) {
           const tdemail = document.createElement("td");
           tdemail.textContent = email;
           tr.appendChild(tdemail)
+          const tdsupprimer = document.createElement("td");
+          tdsupprimer.textContent = "X";
+          tr.appendChild(tdsupprimer);
      })
      body.appendChild(table)
 
