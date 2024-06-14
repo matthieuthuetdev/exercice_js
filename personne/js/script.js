@@ -4,7 +4,7 @@ h1.textContent = "liste des personnes inscrites";
 const ul = document.createElement("ul");
 function creattable(personnes) {
      const table = document.createElement("table");
-     table.setAttribute("id","inscrit")
+     table.setAttribute("id", "inscrit")
      const thead = table.createTHead();
      const tbody = table.createTBody();
      const tr = document.createElement("tr");
@@ -40,32 +40,40 @@ function creattable(personnes) {
           tr.appendChild(tdemail)
           const tdsupprimer = document.createElement("td");
           tdsupprimer.textContent = "X";
-          tdsupprimer.add
           tr.appendChild(tdsupprimer);
-          tdsupprimer.setAttribute("id", "l"+i);
+          tdsupprimer.setAttribute("id", "l" + i);
           tdsupprimer.setAttribute("class", "supp");
           i++;
      })
      body.appendChild(table)
 
 }
-const personnes = ["Mike Dev", "John Makenzie", "Léa Grande","delphine THUET","Emmanuel THUET","Matthieu THUET"];
-personnes.forEach((Element) => {
-     const li = document.createElement("li");
-     li.innerText = Element;
-     ul.appendChild(li);
-});
-body.appendChild(h1);
-body.appendChild(ul);
-creattable(personnes);
-const tdsup = document.querySelectorAll(".supp");
-tdsup.forEach(Element => {
-     Element.addEventListener("click", () =>{
-          const id = Element.id
-          personnes.splice(id.split("l")[1],1);
-          console.log(personnes)
-          body.removeChild(document.querySelector("#inscrit"));
-          creattable(personnes)
-     })
-});
+const personnes = ["Mike Dev", "John Makenzie", "Léa Grande", "delphine THUET", "Emmanuel THUET", "Matthieu THUET"];
+function creatliste(personnes) {
+     let i = 0
+     personnes.forEach((Element) => {
+          const li = document.createElement("li");
+          li.innerText = Element;
+          li.setAttribute("id", "l" + i);
+          ul.appendChild(li);
+          ul.setAttribute("id", "liste")
+          body.appendChild(ul)
+          i++
+     });
 
+}
+
+const sup = document.querySelectorAll(".supp")
+sup.forEach(element => {
+     Element.addEventListener("click", () => {
+          const id = tdsupprimer.id;
+          console.log(id)
+          personnes.splice(id.split("l")[1], 1);
+          table.removeChild(document.querySelector("tr #" + ".supp"))
+
+     })
+
+
+body.appendChild(h1);
+creatliste(personnes);
+const liste = creattable(personnes);
