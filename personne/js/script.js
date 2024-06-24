@@ -22,12 +22,15 @@ function creattable(personnes) {
      thsupprimer.textContent = "Supprimer"
      let i = 0
      tr.appendChild(thsupprimer)
+
      personnes.forEach(Element => {
           const personne = Element.split(" ")
           const nom = personne[1];
           const prenom = personne[0];
           const email = prenom.toLowerCase() + "." + nom.toLowerCase() + "@gmail.com"
           const tr = document.createElement("tr");
+          tr.setAttribute("id", "l" + i);
+
           tbody.appendChild(tr)
           const tdnom = document.createElement("td");
           tdnom.textContent = nom;
@@ -67,13 +70,14 @@ const sup = document.querySelectorAll(".supp")
 sup.forEach(element => {
      Element.addEventListener("click", () => {
           const id = tdsupprimer.id;
-          console.log(id)
           personnes.splice(id.split("l")[1], 1);
-          table.removeChild(document.querySelector("tr #" + ".supp"))
+          console.log(personnes)
+          table.removeChild(document.querySelector("tr#"+id))
 
      })
+})
 
 
 body.appendChild(h1);
 creatliste(personnes);
-const liste = creattable(personnes);
+creattable(personnes);
