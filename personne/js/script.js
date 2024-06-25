@@ -65,19 +65,20 @@ function creatliste(personnes) {
      });
 
 }
-
+body.appendChild(h1);
+creatliste(personnes);
+creattable(personnes);
 const sup = document.querySelectorAll(".supp")
-sup.forEach(element => {
+sup.forEach(Element => {
      Element.addEventListener("click", () => {
-          const id = tdsupprimer.id;
+
+          const id = Element.id;
           personnes.splice(id.split("l")[1], 1);
           console.log(personnes)
-          table.removeChild(document.querySelector("tr#"+id))
+          const tbody = document.querySelector("tbody")
+          tbody.removeChild(document.querySelector("tr#"+id))
 
      })
 })
 
 
-body.appendChild(h1);
-creatliste(personnes);
-creattable(personnes);
