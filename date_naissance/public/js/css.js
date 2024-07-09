@@ -1,0 +1,1 @@
+const blue = document.getElementsByClassName("blue")
